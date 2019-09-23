@@ -1,5 +1,7 @@
 require 'sinatra'
-require_relative 'request_signing'
+require 'digest'
+require 'openssl'
+require 'base64'
 
 secret_key = "abc1234"
 password = "tacos is the password"

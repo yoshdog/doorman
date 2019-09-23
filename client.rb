@@ -1,6 +1,5 @@
 require 'net/http'
 require 'uri'
-require_relative './request_signing'
 require 'digest'
 require 'openssl'
 require 'base64'
