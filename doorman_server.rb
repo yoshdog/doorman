@@ -6,13 +6,6 @@ secret_store = {
   "aws_integration123" => "abc1234"
 }
 
-doorman_secret = "secret_key"
-
-account_info = {
-  account_id: 1,
-  user: 2
-}
-
 before do
   begin
     RequestSigning.verify!(request, secret_store)
