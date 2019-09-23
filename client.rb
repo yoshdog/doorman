@@ -1,7 +1,6 @@
 require 'net/http'
 require 'uri'
 require_relative './request_signing'
-require 'securerandom'
 
 # uri = URI('https://support.zd-dev.com/api/services/zis/configs/salesforce?scope=*')
 uri = URI('http://localhost:1111/ping')
