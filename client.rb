@@ -1,9 +1,6 @@
 require 'net/http'
 require 'uri'
 require_relative './simple_request_signing'
-require 'digest'
-require 'openssl'
-require 'base64'
 
 # uri = URI('https://support.zd-dev.com/api/services/zis/configs/salesforce?scope=*')
 uri = URI('http://localhost:1111/ping')
