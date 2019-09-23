@@ -7,9 +7,6 @@ require 'securerandom'
 uri = URI('http://localhost:1111/ping')
 request = Net::HTTP::Get.new(uri)
 
-secret_id = "zis_engine123" # KRAGLE_OAUTH_SECRET
-secret_key = "abc1234" # KRAGLE_OAUTH_KEY
-
 auth_header = "tacos is the password"
 request['Authorization'] = auth_header
 puts auth_header
