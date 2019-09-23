@@ -1,12 +1,10 @@
 require 'sinatra'
-require_relative 'request_signing'
+require_relative 'simple_request_signing'
+require 'uri'
 
 secret_key = "abc1234"
-password = "tacos is the password"
-algorithm = OpenSSL::Digest::SHA256.new
-
 before do
-  if request.env['HTTP_AUTHORIZATION'] != Base64.strict_encode64(OpenSSL::HMAC.digest(algorithm, secret_key, password))
+  if request.env['HTTP_AUTHORIZATION'] != SimpleRequestSigning.sign(request.request_method, URI(request.url), secret_key)
     halt 401
   end
 end
