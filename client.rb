@@ -6,9 +6,9 @@ require_relative './request_signing'
 uri = URI('http://localhost:1111/ping')
 request = Net::HTTP::Get.new(uri)
 
-auth_header = "tacos is the password"
-request['Authorization'] = auth_header
-puts auth_header
+password = "tacos is the password"
+request['Authorization'] = password
+puts request['Authorization']
 
 response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
   http.request(request)
